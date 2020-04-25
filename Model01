@@ -1,0 +1,15 @@
+adoption=50
+r0=2
+level=5
+notified_blu=0 #number of people notified by bluetooth only
+notified_corona=0 #number of people notified by corona Analytica
+
+#model Bluethoot only
+for i in range (0, level):
+
+print("People notified by bluetooth only %d" % (notified_blu))
+
+#model Corona Analytica
+for i in range (0, level):
+
+print("People notified by bluetooth only %d" % (notified_blu))
