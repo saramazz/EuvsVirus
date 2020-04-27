@@ -34,7 +34,8 @@ def status():
         return random.randint(0,1) #1 malato, 0 sano
 
 
-tree = Albero(random.randint(0,1), Albero(random.randint(0,1)), Albero(random.randint(0,1)))#(1,0,1)#Albero.status, Albero(Albero.status), Albero(Albero.status))
+tree = Albero(random.randint(0,1), Albero(random.randint(0,1)), Albero(random.randint(0,1)))#(1,0,1)
+##Albero(contenuto, FiglioSinistra, FiglioDestra)
 
 StampaAlberoIn(tree)
 notified_BL=(tree.Totale)
