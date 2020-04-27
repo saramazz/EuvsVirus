@@ -1,11 +1,13 @@
-'''model bluethoot e AC''
+''' model bluethoot e AC '''
+import random
  #model Corona Analytica
- r0=2; #coeff diffusione
- l=2; #livelli di profondità albero
- subjects=[]*(r0^l); #lista di lunghezza r0^l con tutte le persone;
- for i in subjects:
-    subjects[i]=random(0,1)
+r0=2; #coeff diffusione
+l=2; #livelli di profondità albero
+subjects=[] #lista vuota, avrà lunghezza r0^l con tutte le persone;
+for i in range(0, r0**l):
+    subjects.append(random.randint(0,1))
 notified_CA=sum(subjects)
+print(subjects)
 print("People notified by Corona Analytica %d" % (notified_CA))
 
 #model Bluethoot only
@@ -16,28 +18,32 @@ class Albero:
     self.Destra = Destra
   def __str__(self):
     return str(self.Contenuto)
-  def status(Albero):
-        return random(0,1) #1 malato, 0 sano
-  def StampaAlberoPre(Albero):
-        if Albero == None: return
-        print (Albero.Contenuto),
-        StampaAlberoPre(Albero.Sinistra)
-        StampaAlberoPre(Albero.Destra)
   #somma dei contenuti
   def Totale(Albero):
         if Albero == None: return 0
-        return Albero.Contenuto + Totale(Albero.Sinistra) + \
-        Totale(Albero.Destra)
+        return Albero.Contenuto + Totale(Albero.Sinistra) + Totale(Albero.Destra)
         
- #main bluethooth      
- Albero = Albero(1,0,1)#Albero.status, Albero(Albero.status), Albero(Albero.status))
- StampaAlberoPre(Albero)
- notified_BL=(Albero.Totale)
- print("People notified by bluetooth only %d" % (notified_BL))
+#main
+def StampaAlberoIn(Albero):
+  if Albero == None: return
+  StampaAlberoIn(Albero.Sinistra)
+  print (Albero.Contenuto,
+  StampaAlberoIn(Albero.Destra))
+
+def status():
+        return random.randint(0,1) #1 malato, 0 sano
+
+
+tree = Albero(random.randint(0,1), Albero(random.randint(0,1)), Albero(random.randint(0,1)))#(1,0,1)#Albero.status, Albero(Albero.status), Albero(Albero.status))
+
+StampaAlberoIn(tree)
+notified_BL=(tree.Totale)
+print("People notified by bluetooth only")
+print(notified_BL)
  
- #efficacia: percentuale di persone che il BL si è perso rispetto il CAù
- total=r0^l;
- efficacia=(notified_CA-notified_BL)/total*100
- print("Efficacia" % (efficacia))
+efficacia: percentuale di persone che il BL si è perso rispetto il CAù
+total=r0**l
+efficacia=(notified_CA-notified_BL)/total*100
+print("Efficacia" % (efficacia))
  
- #da inserire probabilità di avere scaricato l'applicazione e modificare probabilità di contagio, qui è 0 o 1 (al 50%)?
+#da inserire probabilità di avere scaricato l'applicazione e modificare probabilità di #contagio, qui è 0 o 1 (al 50%)
