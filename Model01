@@ -12,4 +12,4 @@ print("People notified by bluetooth only %d" % (notified_blu))
 #model Corona Analytica
 for i in range (0, level):
 
-print("People notified by bluetooth only %d" % (notified_blu))
+print("People notified by corona Analytica %d" % (notified_blu))
