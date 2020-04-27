@@ -49,6 +49,6 @@ print(notified_BL)
 #efficacia: percentuale di persone che il BL si è perso rispetto il CAù
 total=r0**l
 efficacia=(notified_CA-notified_BL)/total*100
-print("Efficacia" % (efficacia))
+print("Efficacia %d" %(efficacia))
  
 #da inserire probabilità di avere scaricato l'applicazione e modificare probabilità di #contagio, qui è 0 o 1 (al 50%) e il calcolo dei notificati nel bluethooth
