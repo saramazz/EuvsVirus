@@ -19,9 +19,13 @@ class Albero:
   def __str__(self):
     return str(self.Contenuto)
   #somma dei contenuti
-  def Totale(Albero):
+  def Totale(Albero): #somma del contenuto dei singoli nodi
         if Albero == None: return 0
         return Albero.Contenuto + Totale(Albero.Sinistra) + Totale(Albero.Destra)
+   def Totale(Albero): #somma del contenuto nodi secondo Bluet
+        if Albero == None: return 0
+         if Albero. #se il figlio e il padre sono entrambi malati e con l'app ??
+          return Albero.Contenuto + Totale(Albero.Sinistra) + Totale(Albero.Destra)
         
 #main
 def StampaAlberoIn(Albero):
@@ -42,7 +46,7 @@ notified_BL=(tree.Totale)
 print("People notified by bluetooth only")
 print(notified_BL)
  
-efficacia: percentuale di persone che il BL si è perso rispetto il CAù
+#efficacia: percentuale di persone che il BL si è perso rispetto il CAù
 total=r0**l
 efficacia=(notified_CA-notified_BL)/total*100
 print("Efficacia" % (efficacia))
