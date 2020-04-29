@@ -3,10 +3,11 @@ import random
  #model Corona Analytica
 r0=2; #coeff diffusione
 l=2; #livelli di profondità albero
+adp=0.2; #adoption
 subjects=[] #lista vuota, avrà lunghezza r0^l con tutte le persone;
 for i in range(0, r0**l):
     subjects.append(random.randint(0,1))
-notified_CA=sum(subjects)
+notified_CA=sum(subjects)*adp;
 print(subjects)
 print("People notified by Corona Analytica %d" % (notified_CA))
 
@@ -51,4 +52,5 @@ total=r0**l
 efficacia=(notified_CA-notified_BL)/total*100
 print("Efficacia %d" %(efficacia))
  
-#da inserire probabilità di avere scaricato l'applicazione e modificare probabilità di #contagio, qui è 0 o 1 (al 50%) e il calcolo dei notificati nel bluethooth
+#da controllare probabilità adoption e modificare probabilità di
+#contagio, qui è 0 o 1 (al 50%) e il calcolo dei notificati nel bluethooth
